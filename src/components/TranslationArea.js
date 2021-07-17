@@ -53,8 +53,8 @@ function TranslationArea() {
 
     return (
     <Container style={styles.translationArea} className="p-5">
-        <Row className="justify-content-md-center">
-            <Col xs className="mx-5">
+        <Row className="justify-content-sm-center">
+            <Col md className="mx-xxl-5">
                 {/*TranslationBox Source*/}
                 <TranslationBox
                     changeTextHandler={setSourceText}
@@ -66,11 +66,11 @@ function TranslationArea() {
                         title="From:"/>
                 </TranslationBox>
             </Col>
-            <Col xs="auto" className="my-auto">
+            <Col xs="12" md="auto" className="my-sm-5 my-md-auto" align="center">
                 <Button className="my-auto" variant="secondary" onClick={translateData}>Translate <FontAwesomeIcon
                     icon={faArrowRight}/></Button>
             </Col>
-            <Col xs className="mx-5">
+            <Col md className="mx-5">
                 {/*TranslationBox Target*/}
                 <TranslationBox text={targetData['text']}
                                 changeTextHandler={setTargetText}

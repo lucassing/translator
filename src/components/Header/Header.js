@@ -9,13 +9,13 @@ import "./Header.css"
 function Header() {
     return (
         <Container fluid className="header">
-            <Row className="justify-content-md-center">
-                <Col className='mt-5' md="auto">
+            <Row className="justify-content-sm-center">
+                <Col className='mt-5' sm="auto">
                     <h1>All Out!</h1>
                 </Col>
             </Row>
-            <Row className="justify-content-md-center">
-                <Col className='mb-5' md="auto">
+            <Row className="justify-content-sm-center">
+                <Col className='mb-5' sm="auto">
                     <h3>Translator</h3>
                 </Col>
             </Row>
