@@ -18,8 +18,12 @@
 [NodeJS](https://nodejs.org/es/download/)
 
 ### Install Dependencies
+Clone this repository
 
-Run in terminal
+`git clone https://github.com/lucassing/translator.git`
+
+
+Inside the repository folder, run in terminal
 
 `npm install`
 
@@ -27,7 +31,7 @@ Run in terminal
 
 ## Run App
 
-To start the app run in the terminal
+To start the app run
 
 `npm start` 
 
