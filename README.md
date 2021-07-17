@@ -25,7 +25,7 @@ Run in terminal
 
 <hr/>
 
-## Run the App
+## Run App
 
 To start the app run in the terminal
 
@@ -34,3 +34,9 @@ To start the app run in the terminal
 it will run an instance of the app in  
 
 [http://localhost:3000](http://localhost:3000)
+
+## Open deployed version.
+
+The app is available also through this url:
+
+[All Out! Tanslator](https://translator-beta.vercel.app/)
