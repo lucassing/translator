@@ -1,0 +1,10 @@
+h1{
+    color: #fefefe;
+    font-family: "proxima-nova",sans-serif;
+    font-style: normal;
+    font-weight: 800;
+}
+.header {
+    background-image: url("https://allout.org/themes/allout2017/images/home/pink_lines.png");
+    background-color: #ee2451;
+}
