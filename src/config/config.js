@@ -1,4 +1,3 @@
-export const key = process.env.REACT_APP_DEEPLAPI_KEY
 export const targ_languages = {
                                 "BG":"Bulgarian",
                                 "CS":"Czech",
