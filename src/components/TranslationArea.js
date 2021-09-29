@@ -1,6 +1,6 @@
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import {Button} from "react-bootstrap";
+import {Alert, Button} from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faArrowRight} from "@fortawesome/free-solid-svg-icons";
@@ -23,6 +23,7 @@ const styles = {
 function TranslationArea() {
     let [sourceData, setSourceData] = useState({"source_lang": "EN", "text": ""})
     let [targetData, setTargetData] = useState({"target_lang": "", "text": ""})
+    const [error, setError] = useState({"message": "", "show": false});
 
     const setSourceText = (sourceText) => {
         setSourceData({...sourceData, "text": sourceText})
@@ -34,20 +35,34 @@ function TranslationArea() {
 
     const setTargetText = (targetText) => {
         setTargetData({...targetData, "text": targetText})
+        setError({...error, "show":false})
+
     }
 
     const setTargetLang = (targetLang) => {
         setTargetData({...targetData, "target_lang": targetLang})
+        if(targetLang==""){
+            setError({"message":"Please select a target language", "show":true})
+        }else{
+            setError({...error, "show":false})
+        }
     }
 
     const translateData = async () => {
         setTargetText("")
-        let res = await fetchTranslateText(sourceData.text, sourceData.source_lang, targetData.target_lang)
-        if (res.ok) {
-            let data = await res.json()
-            let text = ""
-            data['translations'].forEach(translation => text += translation.text)
-            setTargetText(text)
+        if(targetData.target_lang!="") {
+            let res = await fetchTranslateText(sourceData.text, sourceData.source_lang, targetData.target_lang)
+            if (res.ok) {
+                let data = await res.json()
+                let text = ""
+                data['translations'].forEach(translation => text += translation.text)
+                setTargetText(text)
+            } else {
+                setError({"message":"There was an error with our server, please retry later", "show":true})
+            }
+        }
+        else{
+            setError({"message":"Please select a target language", "show":true})
         }
     }
 
@@ -79,6 +94,9 @@ function TranslationArea() {
                         changeLangHandler={setTargetLang}
                         options={targ_languages}
                         title="To:"/>
+                    <Alert className='my-1 mx-1' variant="danger" show={error.show}>
+                        <p className='my-0'>{error.message}</p>
+                    </Alert>
                 </TranslationBox>
             </Col>
         </Row>

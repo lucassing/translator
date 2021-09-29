@@ -32,7 +32,7 @@ function LanguageSelector(props) {
                                 as="select"
                                 className="rounded-0 shadow"
                                 disabled={false}>
-                    <option>Select Language</option>
+                    <option value="">Select Language</option>
                     {
                         Object.entries(options).map(([key, value]) => (<option key={key} value={key}>{value}</option>))
                     }
