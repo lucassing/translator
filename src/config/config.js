@@ -1,5 +1,5 @@
-export const deeplAPI =  process.env.deeplAPI
-export const key = process.env.deeplAPI_key
+export const deeplAPI =  process.env.REACT_APP_DEEPLAPI_URL
+export const key = process.env.REACT_APP_DEEPLAPI_KEY
 export const targ_languages = {
                                 "BG":"Bulgarian",
                                 "CS":"Czech",
