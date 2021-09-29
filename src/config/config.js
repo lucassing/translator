@@ -1,5 +1,5 @@
-export const deeplAPI =  "https://api-free.deepl.com/"
-export const key = "5652c0b9-adcf-7f2e-f6a2-3a577f700dc9:fx"
+export const deeplAPI =  process.env.deeplAPI
+export const key = process.env.deeplAPI_key
 export const targ_languages = {
                                 "BG":"Bulgarian",
                                 "CS":"Czech",
