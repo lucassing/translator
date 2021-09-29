@@ -41,7 +41,7 @@ function TranslationArea() {
 
     const setTargetLang = (targetLang) => {
         setTargetData({...targetData, "target_lang": targetLang})
-        if(targetLang==""){
+        if(targetLang===""){
             setError({"message":"Please select a target language", "show":true})
         }else{
             setError({...error, "show":false})
@@ -50,7 +50,7 @@ function TranslationArea() {
 
     const translateData = async () => {
         setTargetText("")
-        if(targetData.target_lang!="") {
+        if(targetData.target_lang!=="") {
             let res = await fetchTranslateText(sourceData.text, sourceData.source_lang, targetData.target_lang)
             if (res.ok) {
                 let data = await res.json()
